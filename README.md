@@ -1,1 +1,3 @@
-# pokemonAdventure
+# Pokemon Adventure
+
+Pokemon adventure game
