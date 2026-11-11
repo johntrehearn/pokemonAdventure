@@ -1,0 +1,121 @@
+/* 1. All elements' size includes both padding & border */
+* {
+    box-sizing: border-box;
+}
+/* 2. Whole page, get rid of default margin of browser  */
+body {
+    margin: 0;
+    /* min-height is 100& viewport height */
+    min-height: 100vh;
+    background-color: #fffdf5;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* 3. Main container */
+main {
+    width: 90%;
+    max-width: 920px;
+    /* center the main container (no margin: top & bottom, auto margin: left & right */
+    margin: 0 auto;
+    padding: 55px 0 70px;
+}
+/* 4. Main heading */
+h1 {
+    font-size: clamp(2.3rem, 6vw, 4rem);
+    text-align: center;
+    margin-bottom: 20px;
+   
+}
+/* 5. Sub-title */
+.subtitle {
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0 0 38px;
+}
+/* 6. Introduction */
+.intro{
+    text-align: center;
+    line-height: 1.5;
+    border: 2px solid #292929;
+    border-radius: 5px;
+    margin-bottom: 34px;
+    font-style: italic;
+    font-size: 1rem;
+    padding: 12px 16px;
+}
+/* 7. Form */
+.form-row {
+    display: flex;
+    gap: 22px;
+    justify-content: space-between;
+}
+.name {
+    flex: 1;
+    min-width: 0;
+}
+/* flex: grow shrink basis */
+.age {
+    flex: 0 0 145px;
+}
+@media (max-width: 560px) {
+    .form-row{
+        flex-direction: column;
+    }
+    .age {
+        flex-basis: auto;
+    }
+}
+/* Labels */
+.form-row label {
+    display: block;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+/* Input fields */
+.form-row input {
+    display: block;
+    width: 100%;
+    border: 2px solid #292929;
+    border-radius: 10px;
+    background: white;
+    padding: 13px 15px;
+    font-size: 1rem;
+    font-style: italic;
+}
+.form-row input:hover {
+    outline: 3px solid #f6d86c;
+    outline-offset: 2px;
+}
+button {
+    margin-top: 24px;
+    border: 2px solid #292929;
+    background: #ffdf70;
+    padding: 13px 22px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    font-style: italic;
+    cursor: pointer;
+    box-shadow: 2px 3px 0 #292929;
+}
+
+button:hover {
+    background: #f4cd4e;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 4px 0 #292929;
+}
+.number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    border: 2px solid #292929;
+    border-radius: 50%;
+    font-style: italic;
+    background-color: black;
+    color: white;
+    
+}

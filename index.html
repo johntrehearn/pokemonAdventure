@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon World - Start</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <main>
+        <div class="screen-label">Screen 1 - Start</div>
+        <h1>POKEMON WORLD</h1>
+        <p class="subtitle">A trainer's journey - SDG 15 Life on Land</p>
+        <div class="intro">Explore new places, collect Poke Balls
+            and catch wild Pokemon.
+            Be gentle: protect wildlife and forests.
+        </div>
+        <form  id="startForm">
+            <div class="form-row">
+                <div class="name">
+                    <!-- "for" attribute connects a label to an input field -->
+                    <label for="trainerName">
+                        <span class="number">1</span>
+                        Trainer name
+                    </label>
+                    <input type="text"
+                           id="trainerName"
+                           name = "trainerName"
+                           placeholder="Your name"
+                           required
+                           maxlength = "30"
+                    >
+                </div>
+                <div class="age">
+                    <label for="age">
+                        <span class="number">2</span>
+                        Age
+                    </label>
+                    <input type="number"
+                           id = "age"
+                           name="age"
+                           placeholder="Age"
+                           required
+                           min = "1"
+                           max = "120">
+                </div>
+            </div>
+            <button type="submit">
+                <a href="finalPage.html">
+                    Start journey
+                </a>
+            </button>
+            <p id="message" role="alert"></p>
+        </form>
+    </main>
+    
+
+</body>
+</html>
