@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #dff3ff 0%, #fff4d6 100%);
+    margin: 1rem;
+    text-align: center;
+    font-family: 'Pixelify Sans', cursive;
+}
+
+.pokeDisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: #23395d;
+}
+
+h1 {
+    font-family: 'Pixelify Sans', cursive;
+    text-align: center;
+    font-size: 70px;
+    color: #d64545;
+    text-shadow: 3px 3px 0 #ffffff;
+}
+
+.card {
+    background-color: #fffaf0;
+    margin: 20px;
+    border: #3f72af solid 8px;
+    border-radius: 20px;
+    box-shadow: 0 8px 0 #b8cce4;
+    overflow: hidden;
+}
+
+.cardTitle {
+    background-color: #f2c14e;
+    color: #23395d;
+    min-height: 5vh;
+    font-size: 1.5rem;
+    padding: 0.35rem;
+}
+
+.btn {
+    width: 6rem;
+    height: 3rem;
+    color: #ffffff;
+    background-color: #3f72af;
+    border: 3px solid #23395d;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d64545;
+}
+.pokeDisplay img {
+    width: 100%;
+    object-fit: contain;
+    height: 200px;
+    padding: 1rem;
+}
