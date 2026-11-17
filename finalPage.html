@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Pokemon World - You Win!</title>
-    <link rel="stylesheet" href="css/finalPage.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main>
         <div class="screen-label">Screen 7 - Win</div>
         <h1>You win!</h1>
         <section class="win-ways">
-            <div class="win-condition winner">
+            <div class="info-box winner">
                 <p>
                     <strong>Way 1 - Legend Hunter:</strong>
                     catch Mewtwo and collect all 3 balls.
                 </p>
             </div>
-            <div class="win-condition">
+            <div class="info-box">
                 <p>
                     <strong>Way 2 - Master Pokedex:</strong>
                     catch all 4 Pokemon.
                 </p>
             </div>
-            <div class="win-condition">
+            <div class="info-box">
                 <p>
                     <strong>Way 3 - Explorer:</strong>
                     reach the Pokemon League with at least
@@ -31,22 +35,15 @@
                 </p>
             </div>
         </section>
-        <!-- Move used -->
         <div class="moves-used">
             Moves used: <span id="movesCount">[n]</span>
         </div>
-        <!-- Navigations buttons -->
-        <div class="win-buttons">
-            <button type="button" class="play-again">
-                <a href="index.html">
-                    <span class="number">1</span>
-                    Play again
-                </a>
-                
+        <div class="button-row">
+            <button class="primary-button">
+                Play again
             </button>
-            <button type="button" class="see-pokedex">
-                <span class="number">2</span>
-                See my Pokedex
+            <button class="primary-button">
+                Pokedex
             </button>
         </div>
     </main>
