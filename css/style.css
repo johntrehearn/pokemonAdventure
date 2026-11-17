@@ -86,23 +86,6 @@ h1 {
 #message {
     margin-top: 0.5rem;
 }
-@media (max-width: 560px) {
-    .start-page h1 {
-        font-size: clamp(2.5rem, 12vw, 4rem);
-    }
-    .intro {
-        padding: 0.75rem 0.9rem;
-        margin-bottom: 2.2rem;
-        font-size: 1rem;
-    }
-    #startForm {
-        padding: 1.1rem 1rem;
-    }
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-}
 .winner {
     background-color: #F2C14D;
 }
@@ -113,4 +96,57 @@ h1 {
 }
 .moves-used {
     margin-top: 4rem;
+}
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+.card {
+    background-color: #fffaf0;
+    border: 8px solid #3f72af;
+    border-radius: 20px;
+    box-shadow: 0 8px 0 #b8cce4;
+    overflow: hidden;
+    text-align: center;
+}
+.card h2 {
+    color: #23395d;
+    padding: 0.5rem;
+}
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    padding: 1rem;
+}
+.card h3 {
+    background-color: #F2C14D;
+    color: #23395d;
+    padding: 0.7rem;
+    font-size: 1.4rem;
+}
+.hero-image {
+    width: 100%;
+    max-width: 900px; 
+    height: 350px; 
+    object-fit: cover; 
+    border-radius: 15px;
+}
+@media (max-width: 560px) {
+    .start-page h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+    #startForm {
+        padding: 1.1rem 1rem;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .pokemon-grid {
+        grid-template-columns: 1fr;
+    }
 }
