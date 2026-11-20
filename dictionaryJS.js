@@ -18,7 +18,7 @@ const fetchData = async () => {
             return {
               id: data.id,
               name: data.name,
-              img: data.sprites.other['official-artwork'].front_default,
+              img: data.sprites.front_default,
               types: data.types,
               height: data.height,
               weight: data.weight,
@@ -54,16 +54,14 @@ const pokeCards = (searchString) => {
         return `<span class="type"> ${item.type.name}  </span>`;
       });
       return `<div class="card">
-    <p
-    >#${pokemon.id}</p>
-    <img src="${pokemon.img}" alt="${pokemon.name}"/>
-    
+    <p>#${pokemon.id}</p>
+    <img src="${pokemon.img}" alt="${pokemon.name}" />
     <h3 class="name_card">${pokemon.name}</h3>
     <div>
-    <span${pokemonTypes.join(' ')}</span>
+    <div class="types">${pokemonTypes.join('')}</div>
     <p>
-    <span> ${pokemon.height} cm</span>
-    <span> ${pokemon.weight.toFixed(1)} kg</span>
+    <span>${pokemon.height} cm</span>
+    <span>${pokemon.weight.toFixed(1)} kg</span>
     </p>
     </div>
     </div>`;
@@ -74,9 +72,35 @@ const pokeCards = (searchString) => {
 
 fetchData();
 
-const generation = async (generation) => {
-  console.log('NewGEN is IN FUNCTION ', newGen);
-  const url = `https:pokeapi.co/api/v2/generation/${newGen}/`;
+const fetchPokemonForSpecies = async (speciesName) => {
+  const pokemonResponse = await fetch(
+    `https://pokeapi.co/api/v2/pokemon/${speciesName}`
+  );
+
+  if (pokemonResponse.ok) {
+    return pokemonResponse.json();
+  }
+
+  const speciesResponse = await fetch(
+    `https://pokeapi.co/api/v2/pokemon-species/${speciesName}`
+  );
+  if (!speciesResponse.ok) {
+    return null;
+  }
+
+  const species = await speciesResponse.json();
+  const defaultVariety = species.varieties.find((variety) => variety.is_default);
+  if (!defaultVariety) {
+    return null;
+  }
+
+  const varietyResponse = await fetch(defaultVariety.pokemon.url);
+  return varietyResponse.ok ? varietyResponse.json() : null;
+};
+
+const generation = async (generationId) => {
+  console.log('NewGEN is IN FUNCTION ', generationId);
+  const url = `https://pokeapi.co/api/v2/generation/${generationId}/`;
   console.log(url);
   await fetch(url)
     .then((response) => response.json())
@@ -84,26 +108,25 @@ const generation = async (generation) => {
       console.log('Data Dump');
       console.log(data);
       let sizeGen = data.pokemon_species.length;
-      let newName = data.pokemon_species.name;
       gen_size.innerHTML = `The generation size is: ${sizeGen}`;
       const fetches2 = data.pokemon_species.map((result) => {
-        const url2 = `https:pokeapi.co/api/v2/pokemon/${result.name}/`;
-        console.log('URL2', url2);
-        return fetch(url2)
-          .then((response) => response.json())
-          .then((data) => {
-            return {
-              id: data.id,
-              name: data.name,
-              img: data.sprites.other['official-artwork'].front_default,
-              types: data.types,
-              height: data.height,
-              weight: data.weight,
-            };
-          });
+        return fetchPokemonForSpecies(result.name).then((pokemon) => {
+          if (!pokemon) {
+            return null;
+          }
+
+          return {
+            id: pokemon.id,
+            name: pokemon.name,
+            img: pokemon.sprites?.front_default,
+            types: pokemon.types,
+            height: pokemon.height,
+            weight: pokemon.weight,
+          };
+        });
       });
-      Promise.all(fetches2).then((response2) => {
-        pokeData = response2;
+      return Promise.all(fetches2).then((response2) => {
+        pokeData = response2.filter((pokemon) => pokemon);
         pokeCards('');
       });
     });
