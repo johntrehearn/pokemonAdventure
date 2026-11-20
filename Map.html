@@ -9,49 +9,46 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Pokemon Town</title>
   </head>
 
   <body>
     <div class="container">
       <h1>You are in Pallet Town</h1>
-      <div class="pokeDisplay">
+      <div class="pokemon-grid grid-3 map-grid">
         <div class="card">
-          <p>#1</p>
-          <img src="images/menu/AlteringCave.png" alt="Altering Cave" />
-          <h3 class="cardTitle">Altering Cave</h3>
+          <h2>#1</h2>
+          <img src="images/rooms/AlteringCave.png" alt="Altering Cave" />
+          <h3>Altering Cave</h3>
           <div>
             <p>A mysterious cave near the sea.</p>
           </div>
         </div>
 
         <div class="card">
-          <p>#2</p>
-          <img src="images/menu/PalletTown.png" alt="Pallet Town" />
-          <h3 class="cardTitle">Pallet Town</h3>
+          <h2>#2</h2>
+          <img src="images/rooms/PalletTown.png" alt="Pallet Town" />
+          <h3>Pallet Town</h3>
           <div>
             <p>A small town with a big adventure ahead.</p>
           </div>
         </div>
 
         <div class="card">
-          <p>#3</p>
-          <img src="images/menu/ViridianForest.png" alt="Viridian Forest" />
-          <h3 class="cardTitle">Viridian Forest</h3>
+          <h2>#3</h2>
+          <img src="images/rooms/ViridianForest.png" alt="Viridian Forest" />
+          <h3>Viridian Forest</h3>
           <div>
             <p>A deep forest filled with wild Pokemon.</p>
           </div>
         </div>
       </div>
-      <div class="generation_box">
-        <button class="btn" id="1">Pokedex</button>
-        <button class="btn" id="2">Inventory</button>
-        <button class="btn" id="3">Save</button>
-        <button class="btn" id="5">Quit</button>
-      </div>
-
-  
+      <div class="button-row">
+        <button class="primary-button" id="1">Pokedex</button>
+        <button class="primary-button" id="2">Inventory</button>
+        <button class="primary-button" id="3">Save</button>
+        <button class="primary-button" id="5">Quit</button>
       </div>
     </div>
   </body>
