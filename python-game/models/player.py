@@ -48,15 +48,16 @@ class Player:
             case 3: return bushes.index(3)
 
     # gather user input of what bush they picked between 1-3 by clicking
-    def catch_pokemon(self, all_pokemon, selection):
+    def catch_pokemon(self, all_pokemon, selection): # i think this function moreso reprisents "pick bush" maybe we rename?
+
+        pokemonToCatch = self.generate_pokemon_bushes(selection) # get pokemon from bush (might be None intentionally to say the bush was empty)
+
         # consider adding catch chance ran against api for odds and the particular ball used
         # e.g. poke ball = 50% catch chance, rare pokemon = 50% catch chance so 50%*50% = 25% catch chance
         # then run a random number, if it rolls above 25% then its caught
-        caught = self.generate_pokemon_bushes(selection)
-
         # only add the pokemon if the player does not have it yet
-        if caught in self.pokemon_list:
-            print(f"A wild {caught} pokemon has appeared, but you already have it.")
+        if pokemonToCatch in self.pokemon_list:
+            print(f"A wild {pokemonToCatch} pokemon has appeared, but you already have it.")
         else:
-            print(f"A wild {caught} pokemon has appeared and you caught it!")
-            self.pokemon_list.append(caught)
+            print(f"A wild {pokemonToCatch} pokemon has appeared and you caught it!")
+            self.pokemon_list.append(pokemonToCatch)
