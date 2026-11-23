@@ -34,12 +34,27 @@ class Player:
             for pokemon in self.pokemon_list:
                 print(pokemon)
 
-    def catch_pokemon(self,all_pokemon):
-        # pick a random pokemon, add it only if the player does not have it yet
+    def generate_pokemon_bushes(self, all_pokemon, selection):
+        bushes = []
+        pokecount = random.randint(1, 2) #randomly gen the amount of bushes with pokemon in them
+        for i in pokecount:
+            bushes.append(random.choice(all_pokemon))
+        if i in bushes.count - 3: # should make it so if there is only one bush with pokemon, then two empty bushes are generated, and vise versa
+            bushes.append(None)
+        random.shuffle(bushes) # shuffle the bushes like the cup game so the empty ones will be random
+        match (selection):
+            case 1: return bushes.index(1)
+            case 2: return bushes.index(2)
+            case 3: return bushes.index(3)
+
+    # gather user input of what bush they picked between 1-3 by clicking
+    def catch_pokemon(self, all_pokemon, selection):
         # consider adding catch chance ran against api for odds and the particular ball used
         # e.g. poke ball = 50% catch chance, rare pokemon = 50% catch chance so 50%*50% = 25% catch chance
         # then run a random number, if it rolls above 25% then its caught
-        caught = random.choice(all_pokemon)
+        caught = self.generate_pokemon_bushes(selection)
+
+        # only add the pokemon if the player does not have it yet
         if caught in self.pokemon_list:
             print(f"A wild {caught} pokemon has appeared, but you already have it.")
         else:
