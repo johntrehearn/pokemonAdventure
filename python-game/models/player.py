@@ -36,6 +36,9 @@ class Player:
 
     def catch_pokemon(self,all_pokemon):
         # pick a random pokemon, add it only if the player does not have it yet
+        # consider adding catch chance ran against api for odds and the particular ball used
+        # e.g. poke ball = 50% catch chance, rare pokemon = 50% catch chance so 50%*50% = 25% catch chance
+        # then run a random number, if it rolls above 25% then its caught
         caught = random.choice(all_pokemon)
         if caught in self.pokemon_list:
             print(f"A wild {caught} pokemon has appeared, but you already have it.")
