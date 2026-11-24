@@ -23,6 +23,9 @@ h1 {
     text-align: left;
     margin-bottom: 1.2rem;
 }
+.title {
+    width: 50rem;
+}
 /* Introduction box */
 .info-box {
     max-width: 760px;
