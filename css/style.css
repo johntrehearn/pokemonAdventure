@@ -166,3 +166,32 @@ h1 {
     padding: 0;
     object-fit: cover;
 }
+/* Progress page */
+.bar {
+    height: 1.4rem;
+    margin: 0.3rem 0;
+    background-color: #e3e3e3;
+    border: 4px solid #3f72af;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.locked {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+#pokemonGrid {
+    max-width: 760px;
+}
+#pokemonGrid .card img {
+    height: 160px;
+}
+#progressBox {
+    max-width: 560px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: left;
+}
+#pokemonGrid .card:not(.locked) {
+    border-color: #F2C14D;
+    box-shadow: 0 8px 0 #c9962a;
+}
