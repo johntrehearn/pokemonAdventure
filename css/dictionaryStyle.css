@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #dff3ff 0%, #fff4d6 100%);
+    margin: 1rem;
+    text-align: center;
+    font-family: 'Pixelify Sans', cursive;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 70px;
+    color: #d64545;
+    text-shadow: 3px 3px 0 #ffffff;
+    margin: 2rem 0 0.8rem;
+}
+
+.generation_box {
+    margin-bottom: 1rem;
+}
+
+.search {
+    text-align: center;
+}
+
+input {
+    width: min(100%, 400px);
+    min-height: 3.25rem;
+    padding: 10px 13px;
+    border: 4px solid #3f72af;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1.05rem;
+}
+
+.btn {
+    width: fit-content;
+    padding: 0 1rem;
+    height: 3rem;
+    color: #ffffff;
+    background-color: #3f72af;
+    border: 3px solid #23395d;
+    border-radius: 8px;
+    margin: 0 5px 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d64545;
+}
+
+#gen_No {
+    margin-top: 1rem;
+}
+
+.pokeDisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem auto;
+}
+
+.card {
+    background-color: #fffaf0;
+    border: 8px solid #3f72af;
+    border-radius: 20px;
+    box-shadow: 0 8px 0 #b8cce4;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card p {
+    padding: 0.8rem 1rem 1.2rem;
+    line-height: 1.5;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.name_card {
+    background-color: #f2c14d;
+    color: #23395d;
+    padding: 0.7rem;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 560px) {
+    h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .pokeDisplay {
+        grid-template-columns: 1fr;
+    }
+}

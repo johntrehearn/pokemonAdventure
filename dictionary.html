@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/dictionaryStyle.css" />
+    <title>Pokemon Dictionary</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Pokemon Dictionary</h1>
+      <div class="generation_box">
+        <button class="btn" id="1">GEN 1</button>
+        <button class="btn" id="2">GEN 2</button>
+        <button class="btn" id="3">GEN 3</button>
+        <button class="btn" id="4">GEN 4</button>
+        <button class="btn" id="5">GEN 5</button>
+        <button class="btn" id="6">GEN 6</button>
+        <button class="btn" id="7">GEN 7</button>
+        <button class="btn" id="8">GEN 8</button>
+        <button class="btn" id="9">GEN 9</button>
+      </div>
+
+      <div class="search">
+        <input id="searchBar" type="text" placeholder="Search for Pokemon" />
+        <h3 id="gen_No"></h3>
+        <div class="pokeDisplay"></div>
+      </div>
+    </div>
+    <script src="dictionaryJS.js"></script>
+  </body>
+</html>
