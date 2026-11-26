@@ -89,16 +89,46 @@ h1 {
 #message {
     margin-top: 0.5rem;
 }
-.winner {
-    background-color: #F2C14D;
+/* Win page */
+#winMessage {
+    margin-bottom: 2rem;
 }
-.win-ways .info-box {
+#team {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+.round {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.6rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+    padding: 8px;
+    background-color: #fffaf0;
+    border: 6px solid #3f72af;
+    border-radius: 50%;
+    box-shadow: 0 6px 0 #b8cce4;
+}
+#sdgNote {
     padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: left;
+    border-color: #7fbd65;
+    background-color: #ecf6e5;
+    box-shadow: 0 8px 0 #c5dfb7;
+    margin: 1.5rem auto 0;
 }
-.moves-used {
-    margin-top: 4rem;
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: -1;
+    width: 10px;
+    height: 16px;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
 }
 .pokemon-grid {
     display: grid;
