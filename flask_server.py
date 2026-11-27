@@ -57,14 +57,10 @@ def catch(player, bush):
 
 
 #these serve the pages of the game. The start page opens with just the address,
-# images come from the images folder and everything else (html, css, js) from the static folder
+#everything is in static folder including the images in a subfolder
 @app.route("/")
 def home():
     return send_from_directory("static", "index.html")
-
-@app.route("/images/<path:filename>")
-def serve_image(filename):
-    return send_from_directory("images", filename)
 
 @app.route("/<path:filename>")
 def serve_file(filename):
