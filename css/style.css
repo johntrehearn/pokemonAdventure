@@ -19,54 +19,11 @@ h1 {
     text-shadow: 3px 3px 0 #ffffff;
     margin: 2rem 0 0.8rem;
 }
-.screen-label {
-    text-align: left;
-    margin-bottom: 1.2rem;
-}
 .title {
     width: 50rem;
-}
-/* Introduction box */
-.info-box {
-    max-width: 760px;
-    margin: 3rem auto 3.5rem;
-    background-color: #fffaf0;
-    border: 8px solid #3f72af;
-    border-radius: 20px;
-    box-shadow: 0 8px 0 #b8cce4;
-    line-height: 1.75;
-}
-/* Trainer information box */
-#startForm {
-    margin: 0 auto;
-    padding: 1.7rem 1.8rem 1.5rem;
-}
-/* Name and Age fields */
-.form-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 145px;
-    gap: 2.4rem;
-    text-align: left;
-}
-.form-row label {
-    display: block;
-    margin-bottom: 7px;
-}
-.form-row input {
-    width: 100%;
-    min-height: 3.25rem;
-    padding: 10px 13px;
-    border: 4px solid #3f72af;
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 1.05rem;
-}
-.form-row input::placeholder {
-    color: #777;
-    opacity: 1;
+    max-width: 100%;
 }
 .primary-button {
-    width: fit-content;
     padding: 0 1rem;
     height: 3rem;
     color: #ffffff;
@@ -83,11 +40,47 @@ h1 {
 .primary-button:hover {
     background-color: #d64545;
 }
-#start-button {
-    margin: 1.35rem auto 0;
-}
 #message {
     margin-top: 0.5rem;
+}
+/* Introduction box */
+.info-box {
+    max-width: 760px;
+    margin: 3rem auto 3.5rem;
+    background-color: #fffaf0;
+    border: 8px solid #3f72af;
+    border-radius: 20px;
+    box-shadow: 0 8px 0 #b8cce4;
+    line-height: 1.75;
+}
+/* Start page - Trainer information box */
+#startForm {
+    margin: 0 auto;
+    padding: 1.7rem 1.8rem 1.5rem;
+}
+/* Start page - Name and Age fields */
+.form-row {
+    display: grid;
+    grid-template-columns:1fr 145px;
+    gap: 2.4rem;
+    text-align: left;
+}
+.form-row label {
+    display: block;
+    margin-bottom: 7px;
+}
+.form-row input {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 10px 13px;
+    border: 4px solid #3f72af;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1.05rem;
+}
+/* Start page - Start button */
+#start-button {
+    margin: 1.35rem auto 0;
 }
 /* Win page */
 #winMessage {
@@ -95,13 +88,11 @@ h1 {
 }
 #team {
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1rem;
 }
 .round {
-    display: block;
     width: 100%;
     margin-bottom: 0.6rem;
-    aspect-ratio: 1;
-    object-fit: contain;
     padding: 8px;
     background-color: #fffaf0;
     border: 6px solid #3f72af;
@@ -114,21 +105,6 @@ h1 {
     background-color: #ecf6e5;
     box-shadow: 0 8px 0 #c5dfb7;
     margin: 1.5rem auto 0;
-}
-
-.confetti {
-    position: fixed;
-    top: -20px;
-    z-index: -1;
-    width: 10px;
-    height: 16px;
-    pointer-events: none;
-    animation: fall linear infinite;
-}
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-    }
 }
 .pokemon-grid {
     display: grid;
@@ -165,22 +141,17 @@ h1 {
     font-size: 1.4rem;
 }
 .hero-image {
+    display: block;
     width: 100%;
-    max-width: 900px; 
-    height: 350px; 
-    object-fit: cover; 
     border-radius: 15px;
 }
 @media (max-width: 560px) {
-    .start-page h1 {
-        font-size: clamp(2.5rem, 12vw, 4rem);
-    }
-    #startForm {
-        padding: 1.1rem 1rem;
-    }
     .form-row {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    #startForm {
+        padding: 1.1rem 1rem;
     }
     .pokemon-grid {
         grid-template-columns: 1fr;
@@ -203,17 +174,9 @@ h1 {
     background-color: #e3e3e3;
     border: 4px solid #3f72af;
     border-radius: 20px;
-    overflow: hidden;
 }
 #progressFill {
     background-color: #F2C14D;
-}
-.locked {
-    filter: grayscale(1);
-    opacity: 0.5;
-}
-#pokemonGrid {
-    max-width: 760px;
 }
 #pokemonGrid .card img {
     height: 160px;
@@ -224,7 +187,36 @@ h1 {
     padding: 1rem;
     text-align: left;
 }
-#pokemonGrid .card:not(.locked) {
-    border-color: #F2C14D;
-    box-shadow: 0 8px 0 #c9962a;
+/* Room page */
+.room-scene {
+    position: relative;
+    max-width: 75vh;
+    margin: 0 auto;
+}
+.room-scene + .info-box{
+    width: fit-content;
+    margin: 1rem auto 0.5rem;
+    padding: 0 1.5rem 0.5rem;
+}
+/* Hiding spots */
+.hiding-spot {
+    position: absolute;
+    width: 13%;
+    cursor: pointer;
+}
+.hiding-spot1 {
+    left: 17%;
+    bottom: 10%;
+}
+.hiding-spot2 {
+    left: 43%;
+    bottom: 28%;
+}
+.hiding-spot3 {
+    left: 75%;
+    bottom: 22%;
+}
+/* Bigger spots when hovering */
+.hiding-spot:hover {
+    scale: 1.2;
 }

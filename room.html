@@ -13,32 +13,33 @@
 <body>
     <main class="container">
         <div class="screen-label">Screen 3 - Room</div>
-        <h1>Viridian Forest</h1>
-        <img
-            src="./images/rooms/viridianForest.png"
+        <h1 id="roomName">Viridian Forest</h1>
+        <div class="room-scene forest" id="roomScene">
+            <img
+            src="./images/rooms/ViridianForest.png"
             alt="Viridian Forest"
             class="hero-image"
-        >
+            id="roomImage"
+            >
+            <img src="./images/spots/grass.png" alt="Grass 1" class="hiding-spot hiding-spot1">
+            <img src="./images/spots/grass.png" alt="Grass 2" class="hiding-spot hiding-spot2">
+            <img src="./images/spots/grass.png" alt="Grass 3" class="hiding-spot hiding-spot3">
+        </div>
         <div class="info-box">
-            Something is hidden in this room!
-            <br>
-            Explore the room to find hidden balls.
+            <p id="message">Something is moving. Search to find Pokemon!</p>
         </div>
         <div >
-            <button type="button" class="primary-button">
-                Collect balls
-            </button>
-            <button type="button" class="primary-button">
-               Catch
-            </button>
-            <button type="button" class="primary-button">
+            <button type="button" class="primary-button" id="moveButton">
                 Move
             </button>
-            <button type="button" class="primary-button">
-                Pokedex
+            <button type="button" class="primary-button" id="progressButton">
+                Your progress
             </button>
-            <button type="button" class="primary-button">
-                Inventory
+            <button type="button" class="primary-button" id="saveButton">
+                Save
+            </button>
+            <button type="button" class="primary-button" id="quitButton">
+                Quit
             </button>
         </div>
     </main>
